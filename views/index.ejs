@@ -1,0 +1,28 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <form id="myform" action="/weather" method="post">
+            <label for="Longitude">Longitude</label>
+            <input type="text" id="Longitude" name="longitude">
+        
+            <label for="Latitude">Latitude</label>
+            <input type="text" id="Latitude" name="latitude">
+
+            <input type="submit" name="action" id="whether">
+    </form>
+
+    <div class="container">
+        <%if (locals.uvindex) {%>
+        <p class="text">
+           Temperature : <%= uvindex %> <span style="color: red;font-size: 30px;">kelvin</span>
+        </p>
+        <%}%>
+    </div>
+    
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+  ></script>
+</body>
