@@ -1,14 +1,11 @@
 import express from "express";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
 import ejs from "ejs";
 import bodyParser from "body-parser";
 import axios from "axios";
 
 const app = express();
 const port = 3000;
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const yourApiKey = "60ee8c0802bd3c340cc80652163aaff2";
+const yourApiKey = process.env.OPENWEATHER_API_KEY;
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
